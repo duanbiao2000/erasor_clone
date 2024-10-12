@@ -8,16 +8,26 @@
  * To regenerate, run `npx convex dev`.
  * @module
  */
+// 导入Convex服务器端所需的各种通用构建器和上下文对象，用于定义和执行不同的数据操作和服务。
 
 import {
+  // 用于构建自定义动作的基类。
   ActionBuilder,
+  // 用于构建HTTP动作的基类。
   HttpActionBuilder,
+  // 用于构建突变操作的基类。
   MutationBuilder,
+  // 用于构建查询操作的基类。
   QueryBuilder,
+  // 泛型动作上下文，提供执行动作所需的上下文信息。
   GenericActionCtx,
+  // 泛型突变操作上下文，提供执行突变所需的上下文信息。
   GenericMutationCtx,
+  // 泛型查询上下文，提供执行查询所需的上下文信息。
   GenericQueryCtx,
+  // 泛型数据库读取器，用于从数据库中读取数据。
   GenericDatabaseReader,
+  // 泛型数据库写入器，用于向数据库中写入数据。
   GenericDatabaseWriter,
 } from "convex/server";
 import type { DataModel } from "./dataModel.js";
@@ -140,4 +150,6 @@ export type DatabaseReader = GenericDatabaseReader<DataModel>;
  * your data in an inconsistent state. See [the Convex Guide](https://docs.convex.dev/understanding/convex-fundamentals/functions#atomicity-and-optimistic-concurrency-control)
  * for the guarantees Convex provides your functions.
  */
+// 定义一个名为DatabaseWriter的类型，它是GenericDatabaseWriter类型的别名，参数为DataModel
+// 类型别名允许你定义不同的数据库写入器类型，针对不同的数据模型。例如，你可以定义 UserDatabaseWriter 和 ProductDatabaseWriter，它们都基于 GenericDatabaseWriter，但使用不同的数据模型。
 export type DatabaseWriter = GenericDatabaseWriter<DataModel>;

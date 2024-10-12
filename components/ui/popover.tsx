@@ -5,12 +5,17 @@ import * as PopoverPrimitive from "@radix-ui/react-popover"
 
 import { cn } from "@/lib/utils"
 
+// 定义Popover组件，作为PopoverPrimitive.Root的别名
+// 该组件用于创建一个弹出层系统，通常用于显示额外的信息或操作选项
 const Popover = PopoverPrimitive.Root
 
+// 定义PopoverTrigger组件，作为PopoverPrimitive.Trigger的别名
+// 该组件用于触发Popover的显示与隐藏，是Popover组件的重要组成部分
 const PopoverTrigger = PopoverPrimitive.Trigger
 
 const PopoverContent = React.forwardRef<
   React.ElementRef<typeof PopoverPrimitive.Content>,
+  // 从 PopoverPrimitive.Content 中提取 props 类型，但不包括 ref
   React.ComponentPropsWithoutRef<typeof PopoverPrimitive.Content>
 >(({ className, align = "center", sideOffset = 4, ...props }, ref) => (
   <PopoverPrimitive.Portal>

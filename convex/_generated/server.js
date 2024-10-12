@@ -8,15 +8,15 @@
  * To regenerate, run `npx convex dev`.
  * @module
  */
-
+// 导入Convex框架提供的一系列通用函数，用于处理不同的数据库操作和HTTP请求
 import {
-  actionGeneric,
-  httpActionGeneric,
-  queryGeneric,
-  mutationGeneric,
-  internalActionGeneric,
-  internalMutationGeneric,
-  internalQueryGeneric,
+  actionGeneric, // 用于处理外部API调用的通用函数
+  httpActionGeneric, // 用于处理HTTP请求的通用函数
+  queryGeneric, // 用于执行数据库查询操作的通用函数
+  mutationGeneric, // 用于执行数据库变更操作（如插入、更新、删除）的通用函数
+  internalActionGeneric, // 用于处理内部API调用的通用函数
+  internalMutationGeneric, // 用于执行内部数据库变更操作的通用函数
+  internalQueryGeneric, // 用于执行内部数据库查询操作的通用函数
 } from "convex/server";
 
 /**
